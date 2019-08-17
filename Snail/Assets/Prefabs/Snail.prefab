@@ -239,13 +239,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snailThingies:
-  - range: 0.84
+  - range: 0.72
     position: {x: -0.5, y: 0, z: 0}
     direction: {x: -0.5, y: -0.5, z: 0}
-  - range: 0.84
+  - range: 0.72
     position: {x: 0.5, y: 0, z: 0}
     direction: {x: 0.5, y: -0.5, z: 0}
-  - range: 0.84
+  - range: 0.76
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: -0.7, z: 0}
   rollCollider: {fileID: 3249442079931189282}
@@ -256,7 +256,7 @@ MonoBehaviour:
   groundCheckDirection: {x: 0, y: -1, z: 0}
   leftIndex: 0
   rightIndex: 1
-  middleIndex: 3
+  middleIndex: 2
   groundCheckOrigin: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

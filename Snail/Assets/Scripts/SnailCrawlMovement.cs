@@ -114,12 +114,12 @@ public class SnailCrawlMovement : MonoBehaviour
         }
 
         // transform.Translate(new Vector3(xAxis * movementSpeed, 0, 0), Space.Self);
-        if (!IsTouchingGround && this.enabled)
+        if (!IsTouchingGround)
         {
             GetComponent<Rigidbody>().useGravity = true;
-      
+
         }
-        else
+        else if (this.enabled)
         {
             GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, 0, 0);
             GetComponent<Rigidbody>().useGravity = false;

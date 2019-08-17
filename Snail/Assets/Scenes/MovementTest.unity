@@ -2194,5 +2194,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.043
       objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[0].range
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[2].range
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[1].range
+      value: 0.72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425074952493889499111be8d6c0f8c9, type: 3}
