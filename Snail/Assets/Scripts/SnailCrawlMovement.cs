@@ -31,6 +31,7 @@ public class SnailCrawlMovement : MonoBehaviour
     {
         snailSprite.SetActive(true);
         wasRolling = true;
+        
     }
     private void OnDisable()
     {
@@ -55,7 +56,7 @@ public class SnailCrawlMovement : MonoBehaviour
     //[SerializeField] Vector3 groundCheckOrigin;
     [SerializeField] LayerMask groundMask;
 
-    
+
 
 
     //Vector3 GroundCheckPosition
@@ -70,7 +71,7 @@ public class SnailCrawlMovement : MonoBehaviour
         foreach (var item in snailThingies)
         {
             RaycastHit hit;
-           // Debug.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + item.direction * item.range * 10);
+            // Debug.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + item.direction * item.range * 10);
             //Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction);
             if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.avLenght, groundMask))
             {
@@ -147,7 +148,7 @@ public class SnailCrawlMovement : MonoBehaviour
     public float yAxis { get => Input.GetAxis("Vertical"); }
     public float xAxisRaw { get => Input.GetAxisRaw("Horizontal"); }
     public float yAxisRaw { get => Input.GetAxisRaw("Vertical"); }
-
+    bool facingLeft = false;
 
     private void Start()
     {
@@ -163,7 +164,13 @@ public class SnailCrawlMovement : MonoBehaviour
             slimeCollider.enabled = false;
             GetComponent<RollScript>().enabled = true;
             this.enabled = false;
+            //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
         }
+    }
+
+    private void FixedUpdate()
+    {
+
 
         // transform.Translate(new Vector3(xAxis * movementSpeed, 0, 0), Space.Self);
         if (!IsTouchingGround)
@@ -173,16 +180,19 @@ public class SnailCrawlMovement : MonoBehaviour
         }
         else if (this.enabled)
         {
-            GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, -.5f, 0);
+            GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, -1f, 0);
             GetComponent<Rigidbody>().useGravity = false;
 
             if (xAxis < 0)
             {
-                snailSprite.GetComponent<SpriteRenderer>().flipX = true;
+                // snailSprite.GetComponent<SpriteRenderer>().flipX = true;
+                snailSprite.transform.localRotation =Quaternion.Euler(0, 180, 0);
             }
             else if (xAxis > 0)
             {
-                snailSprite.GetComponent<SpriteRenderer>().flipX = false;
+            //    snailSprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                snailSprite.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                // snailSprite.GetComponent<SpriteRenderer>().flipX = false;
             }
 
             //if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
@@ -213,7 +223,9 @@ public class SnailCrawlMovement : MonoBehaviour
     {
         if (wasRolling)
         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             transform.rotation = Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal);
+            GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(0, -1, 0);
             wasRolling = false;
         }
     }
@@ -221,6 +233,7 @@ public class SnailCrawlMovement : MonoBehaviour
     {
         foreach (var item in snailThingies)
         {
+
             Gizmos.DrawSphere(transform.rotation * item.position + transform.position, .2f);
             Gizmos.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + transform.rotation * item.direction * item.range);
         }
