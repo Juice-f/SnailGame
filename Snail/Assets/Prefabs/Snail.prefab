@@ -238,22 +238,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f689dd735b47b984fa19542505e3afe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snailSprite: {fileID: 3249442078205478798}
   snailThingies:
-  - range: 0.72
+  - range: 0.6
     position: {x: -0.5, y: 0, z: 0}
-    direction: {x: -0.5, y: -0.5, z: 0}
-  - range: 0.72
-    position: {x: 0.5, y: 0, z: 0}
-    direction: {x: 0.5, y: -0.5, z: 0}
-  - range: 0.76
+    degrees: 3.48
+  - range: 0.6
+    position: {x: -0.5, y: 0, z: 0}
+    degrees: 4
+  - range: 0.6
     position: {x: 0, y: 0, z: 0}
-    direction: {x: 0, y: -0.7, z: 0}
+    degrees: 3.14
+  - range: 0.6
+    position: {x: 0.5, y: 0, z: 0}
+    degrees: -4
+  - range: 0.6
+    position: {x: 0.5, y: 0, z: 0}
+    degrees: -3.56
   rollCollider: {fileID: 3249442079931189282}
   slimeCollider: {fileID: 3249442078036684265}
   righySpeed: 100
   movementSpeed: 1
-  groundCheckRange: 1.15
-  groundCheckDirection: {x: 0, y: -1, z: 0}
   leftIndex: 0
   rightIndex: 1
   middleIndex: 2
