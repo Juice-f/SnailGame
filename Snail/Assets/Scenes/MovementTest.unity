@@ -1147,7 +1147,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 95.3
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2292,8 +2292,168 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
         type: 3}
-      propertyPath: righySpeed
-      value: 100
+      propertyPath: snailThingies.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[2].position.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[2].degrees
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[3].position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[3].degrees
+      value: 3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[4].degrees
+      value: 3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[5].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[5].position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[5].degrees
+      value: 3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[2].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[6].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[6].position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[6].degrees
+      value: 3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[6].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[5].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[4].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[3].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[2].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[1].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[0].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[4].position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[7].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[7].position.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[7].degrees
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[7].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[8].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[8].position.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[8].degrees
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[8].avLenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[9].range
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[9].position.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[9].degrees
+      value: -3.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: snailThingies.Array.data[9].avLenght
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425074952493889499111be8d6c0f8c9, type: 3}

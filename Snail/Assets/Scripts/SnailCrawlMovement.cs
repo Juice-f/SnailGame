@@ -11,6 +11,8 @@ public class SnailCrawlMovement : MonoBehaviour
         public float range;
         public Vector3 position;
         public float degrees;
+        public float avLenght;
+
         public Vector3 direction
         {
             get
@@ -44,18 +46,22 @@ public class SnailCrawlMovement : MonoBehaviour
     //[SerializeField] float groundCheckRange;
     //[SerializeField] Vector3 groundCheckDirection;
 
-    [SerializeField] int leftIndex, rightIndex, middleIndex;
+    //[SerializeField] int leftIndex, rightIndex, middleIndex;
 
     //Vector3 GroundCheckDirection
     //{
     //    get => transform.rotation * groundCheckDirection;
     //}
-    [SerializeField] Vector3 groundCheckOrigin;
+    //[SerializeField] Vector3 groundCheckOrigin;
     [SerializeField] LayerMask groundMask;
-    Vector3 GroundCheckPosition
-    {
-        get => transform.position + transform.rotation * groundCheckOrigin;
-    }
+
+    
+
+
+    //Vector3 GroundCheckPosition
+    //{
+    //    get => transform.position + transform.rotation * groundCheckOrigin;
+    //}
 
     public Vector3 GetAverageRayNormal()
     {
@@ -64,9 +70,9 @@ public class SnailCrawlMovement : MonoBehaviour
         foreach (var item in snailThingies)
         {
             RaycastHit hit;
-            Debug.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + item.direction * item.range * 10);
-            Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction);
-            if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range * 3, groundMask))
+           // Debug.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + item.direction * item.range * 10);
+            //Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction);
+            if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.avLenght, groundMask))
             {
                 vector3s.Add(hit.normal);
             }
@@ -167,7 +173,7 @@ public class SnailCrawlMovement : MonoBehaviour
         }
         else if (this.enabled)
         {
-            GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, 0, 0);
+            GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, -.5f, 0);
             GetComponent<Rigidbody>().useGravity = false;
 
             if (xAxis < 0)
