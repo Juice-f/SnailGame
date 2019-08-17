@@ -186,12 +186,12 @@ public class SnailCrawlMovement : MonoBehaviour
             if (xAxis < 0)
             {
                 // snailSprite.GetComponent<SpriteRenderer>().flipX = true;
-                snailSprite.transform.localRotation =Quaternion.Euler(0, 180, 0);
+                snailSprite.transform.localRotation =Quaternion.Euler(0, -90, 0);
             }
             else if (xAxis > 0)
             {
             //    snailSprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                snailSprite.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                snailSprite.transform.localRotation = Quaternion.Euler(0, 90, 0);
                 // snailSprite.GetComponent<SpriteRenderer>().flipX = false;
             }
 
