@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SnailCrawlMovement : MonoBehaviour
 {
+    bool wasRolling = true;
     [System.Serializable]
     class SnailThingy
     {
@@ -27,6 +28,7 @@ public class SnailCrawlMovement : MonoBehaviour
     private void OnEnable()
     {
         snailSprite.SetActive(true);
+        wasRolling = true;
     }
     private void OnDisable()
     {
@@ -62,7 +64,9 @@ public class SnailCrawlMovement : MonoBehaviour
         foreach (var item in snailThingies)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range, groundMask))
+            Debug.DrawLine(transform.position + transform.rotation * item.position, transform.position + transform.rotation * item.position + item.direction * item.range * 10);
+            Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction);
+            if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range * 3, groundMask))
             {
                 vector3s.Add(hit.normal);
             }
@@ -119,7 +123,7 @@ public class SnailCrawlMovement : MonoBehaviour
                 Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction * item.range);
                 if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range, groundMask))
                 {
-                    Debug.Log(hit.collider.name);
+                    //     Debug.Log(hit.collider.name);
                     return true;
                 }
             }
@@ -166,6 +170,15 @@ public class SnailCrawlMovement : MonoBehaviour
             GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, 0, 0);
             GetComponent<Rigidbody>().useGravity = false;
 
+            if (xAxis < 0)
+            {
+                snailSprite.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if (xAxis > 0)
+            {
+                snailSprite.GetComponent<SpriteRenderer>().flipX = false;
+            }
+
             //if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
             //{
             //    GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(leftIndex).normal), righySpeed * Time.deltaTime));
@@ -190,7 +203,14 @@ public class SnailCrawlMovement : MonoBehaviour
 
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (wasRolling)
+        {
+            transform.rotation = Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal);
+            wasRolling = false;
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         foreach (var item in snailThingies)
