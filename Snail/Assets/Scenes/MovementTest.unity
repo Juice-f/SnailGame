@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.048089627, g: 0.06776165, b: 0.1070341, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -948,46 +948,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 156.83101}
---- !u!1 &873189599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3249442079931189277, guid: 425074952493889499111be8d6c0f8c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3249442079059384514}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &873189604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873189599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c9435b5600c294697aca3fa103c780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRoll: 1
-  rigidBody: {fileID: 1949038771}
---- !u!1 &1126167849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3249442078036684267, guid: 425074952493889499111be8d6c0f8c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3249442079059384514}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1126167854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126167849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c9435b5600c294697aca3fa103c780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRoll: 0
-  rigidBody: {fileID: 1949038771}
 --- !u!1 &1178301722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,12 +2424,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 124.02701}
---- !u!54 &1949038771 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3249442078859550833, guid: 425074952493889499111be8d6c0f8c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3249442079059384514}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125399859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,51 +2593,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.043
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[0].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[1].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[2].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[3].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[4].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[5].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[6].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: snailThingies.Array.data[7].avLenght
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: righySpeed
-      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425074952493889499111be8d6c0f8c9, type: 3}

@@ -155,7 +155,7 @@ public class SnailCrawlMovement : MonoBehaviour
         rollCollider.enabled = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetButtonDown("Roll"))
         {
