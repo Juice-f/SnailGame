@@ -49,7 +49,7 @@ public class Water : MonoBehaviour
     }
 
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(new Ray(transform.position,transform.rotation *crawlForce.normalized));
