@@ -9,35 +9,71 @@ public class SnailCrawlMovement : MonoBehaviour
     {
         public float range;
         public Vector3 position;
-        public Vector3 direction;
+        public float degrees;
+        public Vector3 direction
+        {
+            get
+            {
+                float x = Mathf.Sin(degrees);
+                float y = Mathf.Cos(degrees);
+                return new Vector3(x, y, 0).normalized;
+            }
+        }
+        //  public Vector3 direction;
 
         //public float
     }
 
-    public void StartWall(Vector3 vector3)
+    private void OnEnable()
     {
-
+        snailSprite.SetActive(true);
+    }
+    private void OnDisable()
+    {
+        snailSprite.SetActive(false);
     }
 
+    [SerializeField] GameObject snailSprite;
     [SerializeField] SnailThingy[] snailThingies = new SnailThingy[] { new SnailThingy() };
     [SerializeField] Collider rollCollider;
     [SerializeField] Collider slimeCollider;
     [SerializeField] float righySpeed = 5f;
     [SerializeField] float movementSpeed;
-    [SerializeField] float groundCheckRange;
-    [SerializeField] Vector3 groundCheckDirection;
+    //[SerializeField] float groundCheckRange;
+    //[SerializeField] Vector3 groundCheckDirection;
 
     [SerializeField] int leftIndex, rightIndex, middleIndex;
 
-    Vector3 GroundCheckDirection
-    {
-        get => transform.rotation * groundCheckDirection;
-    }
+    //Vector3 GroundCheckDirection
+    //{
+    //    get => transform.rotation * groundCheckDirection;
+    //}
     [SerializeField] Vector3 groundCheckOrigin;
     [SerializeField] LayerMask groundMask;
     Vector3 GroundCheckPosition
     {
         get => transform.position + transform.rotation * groundCheckOrigin;
+    }
+
+    public Vector3 GetAverageRayNormal()
+    {
+        List<Vector3> vector3s = new List<Vector3>();
+
+        foreach (var item in snailThingies)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range, groundMask))
+            {
+                vector3s.Add(hit.normal);
+            }
+        }
+        Vector3 allVectors = new Vector3();
+        foreach (var item in vector3s)
+        {
+            allVectors += item;
+        }
+        return allVectors / vector3s.Count;
+
     }
 
 
@@ -80,27 +116,33 @@ public class SnailCrawlMovement : MonoBehaviour
             foreach (var item in snailThingies)
             {
                 RaycastHit hit;
-                Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction);
+                Debug.DrawRay(transform.position + transform.rotation * item.position, transform.rotation * item.direction * item.range);
                 if (Physics.Raycast(transform.position + transform.rotation * item.position, transform.rotation * item.direction, out hit, item.range, groundMask))
                 {
                     Debug.Log(hit.collider.name);
                     return true;
                 }
             }
-
+            return false;
 
             //if (Physics.Raycast(GroundCheckPosition, GroundCheckDirection, out hit, groundCheckRange, groundMask))
             //{
             //    Debug.Log(hit.collider.name);
             //    return true;
             //}
-            return false;
+
         }
     }
     public float xAxis { get => Input.GetAxis("Horizontal"); }
     public float yAxis { get => Input.GetAxis("Vertical"); }
     public float xAxisRaw { get => Input.GetAxisRaw("Horizontal"); }
     public float yAxisRaw { get => Input.GetAxisRaw("Vertical"); }
+
+
+    private void Start()
+    {
+        rollCollider.enabled = false;
+    }
 
     private void Update()
     {
@@ -124,20 +166,21 @@ public class SnailCrawlMovement : MonoBehaviour
             GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, 0, 0);
             GetComponent<Rigidbody>().useGravity = false;
 
-            if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
-            {
-                GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(leftIndex).normal), righySpeed * Time.deltaTime));
-            }
-            if (xAxis > 0 && GetGroundRay(rightIndex).collider != null)
-            {
-                GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(rightIndex).normal), righySpeed * Time.deltaTime));
-            }
-            else
-            {
-                GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(middleIndex).normal), righySpeed * Time.deltaTime));
-            }
+            //if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
+            //{
+            //    GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(leftIndex).normal), righySpeed * Time.deltaTime));
+            //}
+            //if (xAxis > 0 && GetGroundRay(rightIndex).collider != null)
+            //{
+            //    GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(rightIndex).normal), righySpeed * Time.deltaTime));
+            //}
+            //else
+            //{
+            //    GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(middleIndex).normal), righySpeed * Time.deltaTime));
+            //}
 
-            //     GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GroundHitRayHit.normal), righySpeed * Time.deltaTime));
+            GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetAverageRayNormal()), righySpeed * Time.deltaTime));
+            transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GroundHitRayHit.normal), righySpeed * Time.deltaTime);
             //   GetComponent<Rigidbody>().MovePosition(transform.position + transform.right * movementSpeed * xAxis * Time.deltaTime);
 
