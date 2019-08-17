@@ -20,7 +20,7 @@ public class cameraMovement : MonoBehaviour
     {
         cameraPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        playerPos = new Vector2(snail.transform.position.x, snail.transform.position.y);
+        playerPos = new Vector2(snail.transform.position.x, snail.transform.position.y + 4f);
 
         distanceToPlayer = Mathf.Abs(Mathf.Abs(playerPos.magnitude) - Mathf.Abs(cameraPosition.magnitude));
 

@@ -37,7 +37,7 @@ public class RollScript : MonoBehaviour
         {
             Debug.Log("hit");
             rb.AddForce(downForce);
-            rb.velocity += rb.velocity * 0.3f * Time.deltaTime;
+            rb.velocity += rb.velocity * 0.1f * Time.deltaTime;
         }
         else
         {
