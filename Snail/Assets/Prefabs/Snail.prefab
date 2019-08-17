@@ -243,26 +243,47 @@ MonoBehaviour:
   - range: 0.6
     position: {x: -0.5, y: 0, z: 0}
     degrees: 3.48
+    avLenght: 1
   - range: 0.6
     position: {x: -0.5, y: 0, z: 0}
     degrees: 4
+    avLenght: 1
+  - range: 0.6
+    position: {x: -0.5, y: 0, z: 0}
+    degrees: 3.2
+    avLenght: 1
   - range: 0.6
     position: {x: 0, y: 0, z: 0}
     degrees: 3.14
+    avLenght: 1
+  - range: 0.6
+    position: {x: 0, y: 0, z: 0}
+    degrees: 3.14
+    avLenght: 1
+  - range: 0.6
+    position: {x: 0, y: 0, z: 0}
+    degrees: 3.14
+    avLenght: 1
+  - range: 0.6
+    position: {x: 0, y: 0, z: 0}
+    degrees: 3.14
+    avLenght: 1
   - range: 0.6
     position: {x: 0.5, y: 0, z: 0}
     degrees: -4
+    avLenght: 1
+  - range: 0.6
+    position: {x: 0.5, y: 0, z: 0}
+    degrees: -3.17
+    avLenght: 1
   - range: 0.6
     position: {x: 0.5, y: 0, z: 0}
     degrees: -3.56
+    avLenght: 1
   rollCollider: {fileID: 3249442079931189282}
   slimeCollider: {fileID: 3249442078036684265}
   righySpeed: 100
   movementSpeed: 5
-  leftIndex: 0
-  rightIndex: 1
-  middleIndex: 2
-  groundCheckOrigin: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 311
