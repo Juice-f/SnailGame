@@ -115,11 +115,11 @@ public class SnailCrawlMovement : MonoBehaviour
             GetComponent<Rigidbody>().velocity = transform.rotation * new Vector3(movementSpeed * xAxis, 0, 0);
             GetComponent<Rigidbody>().useGravity = false;
 
-            if (xAxis < 0)
+            if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
             {
                 GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(leftIndex).normal), righySpeed * Time.deltaTime));
             }
-            if (xAxis > 0)
+            if (xAxis > 0 && GetGroundRay(rightIndex).collider != null)
             {
                 GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(rightIndex).normal), righySpeed * Time.deltaTime));
             }
@@ -128,7 +128,7 @@ public class SnailCrawlMovement : MonoBehaviour
                 GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GetGroundRay(middleIndex).normal), righySpeed * Time.deltaTime));
             }
 
-            GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GroundHitRayHit.normal), righySpeed * Time.deltaTime));
+            //     GetComponent<Rigidbody>().MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GroundHitRayHit.normal), righySpeed * Time.deltaTime));
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.FromToRotation(Vector3.up, GroundHitRayHit.normal), righySpeed * Time.deltaTime);
             //   GetComponent<Rigidbody>().MovePosition(transform.position + transform.right * movementSpeed * xAxis * Time.deltaTime);
 

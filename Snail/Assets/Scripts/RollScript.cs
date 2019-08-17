@@ -51,7 +51,7 @@ public class RollScript : MonoBehaviour
             this.gameObject.GetComponent<SnailCrawlMovement>().enabled = true;
             this.gameObject.GetComponent<RollScript>().enabled = false;
             rollCollider.enabled = false;
-            slimeCollider.enabled = false;
+            slimeCollider.enabled = true;
         }
      
     }
