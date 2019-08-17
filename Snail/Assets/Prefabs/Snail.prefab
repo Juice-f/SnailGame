@@ -258,7 +258,7 @@ MonoBehaviour:
   rollCollider: {fileID: 3249442079931189282}
   slimeCollider: {fileID: 3249442078036684265}
   righySpeed: 100
-  movementSpeed: 1
+  movementSpeed: 5
   leftIndex: 0
   rightIndex: 1
   middleIndex: 2
