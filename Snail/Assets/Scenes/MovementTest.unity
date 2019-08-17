@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.047082487, g: 0.06639196, b: 0.10533923, a: 1}
+  m_IndirectSpecularColor: {r: 0.048089627, g: 0.06776165, b: 0.1070341, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -849,13 +849,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792521670}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071058, w: 0.7071078}
-  m_LocalPosition: {x: 1.35, y: 2.99, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7130625, w: 0.70110047}
+  m_LocalPosition: {x: 7.39, y: -3.85, z: 0}
   m_LocalScale: {x: 14.615319, y: 0.35924, z: 0.35924}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.969}
 --- !u!1 &857538528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2169,7 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
-  displayLightIntensity: 100000
+  displayLightIntensity: 19
   displayAreaLightEmissiveMesh: 0
   areaLightCookie: {fileID: 0}
   areaLightShadowCone: 120
@@ -2200,7 +2200,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 100000
+  m_Intensity: 19
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2256,13 +2256,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834625387}
-  m_LocalRotation: {x: -0.18344894, y: 0.6484102, z: -0.43656638, w: -0.5960877}
+  m_LocalRotation: {x: -0.050337452, y: 0.5377178, z: -0.57947254, w: -0.6103583}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 128.293, y: 98.520996, z: -152.872}
+  m_LocalEulerAnglesHint: {x: 43.207, y: 304.864, z: -656.336}
 --- !u!1 &1908247800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,21 +2456,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.043
       objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550833, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078859550833, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3249442078036684265, guid: 425074952493889499111be8d6c0f8c9,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: a5bbbdaf96298a64386767e13462aea9,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 425074952493889499111be8d6c0f8c9, type: 3}
