@@ -155,7 +155,7 @@ public class SnailCrawlMovement : MonoBehaviour
         rollCollider.enabled = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetButtonDown("Roll"))
         {
@@ -166,6 +166,11 @@ public class SnailCrawlMovement : MonoBehaviour
             this.enabled = false;
             //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
         }
+    }
+
+    private void FixedUpdate()
+    {
+
 
         // transform.Translate(new Vector3(xAxis * movementSpeed, 0, 0), Space.Self);
         if (!IsTouchingGround)
