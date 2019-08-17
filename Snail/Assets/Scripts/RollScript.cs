@@ -62,6 +62,8 @@ public class RollScript : MonoBehaviour
         {
             timeSinceSound = 0f;
             int index = Random.Range(0, bounceSounds.Length);
+            float randomPitch = Random.Range(0.5f, 1.5f);
+            aud.pitch = randomPitch;
             bounceSound = bounceSounds[index];
             aud.clip = bounceSound;
             aud.Play();
