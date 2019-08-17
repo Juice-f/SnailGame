@@ -13,7 +13,9 @@ public class RollScript : MonoBehaviour
     public AudioClip[] bounceSounds;
 
     private AudioClip bounceSound;
-   
+
+    public SphereCollider rollCollider;
+    public CapsuleCollider slimeCollider;
 
     public Vector3 downForce;
 
@@ -43,7 +45,14 @@ public class RollScript : MonoBehaviour
             rb.AddForce(downForce*-122f);
         }
 
+        if (Input.GetButtonUp("Roll"))
+        {
 
+            this.gameObject.GetComponent<SnailCrawlMovement>().enabled = true;
+            this.gameObject.GetComponent<RollScript>().enabled = false;
+            rollCollider.enabled = false;
+            slimeCollider.enabled = false;
+        }
      
     }
 
