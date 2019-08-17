@@ -104,11 +104,20 @@ public class SnailCrawlMovement : MonoBehaviour
 
     private void Update()
     {
-        // transform.Translate(new Vector3(xAxis * movementSpeed, 0, 0), Space.Self);
-        if (!IsTouchingGround)
+        if (Input.GetButtonDown("Roll"))
         {
             GetComponent<Rigidbody>().useGravity = true;
+            rollCollider.enabled = true;
+            slimeCollider.enabled = false;
+            GetComponent<RollScript>().enabled = true;
+            this.enabled = false;
+        }
 
+        // transform.Translate(new Vector3(xAxis * movementSpeed, 0, 0), Space.Self);
+        if (!IsTouchingGround && this.enabled)
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+      
         }
         else
         {
@@ -134,14 +143,6 @@ public class SnailCrawlMovement : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Roll"))
-        {
-            GetComponent<Rigidbody>().useGravity = true;
-            rollCollider.enabled = true;
-            slimeCollider.enabled = false;
-            GetComponent<RollScript>().enabled = true;
-            this.enabled = false;
-        }
 
 
     }
