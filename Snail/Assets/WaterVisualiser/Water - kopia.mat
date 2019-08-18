@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
+  m_Name: Water - kopia
   m_Shader: {fileID: -6465566751694194690, guid: 131f7b0efa26e3a4fae0215ebcae89b1,
     type: 3}
   m_ShaderKeywords: 
@@ -111,17 +111,17 @@ Material:
     - Vector1_236C7C27: 0
     - Vector1_2496C013: 0.01
     - Vector1_4437F4D4: 0
-    - Vector1_52D8D5E: 5
+    - Vector1_52D8D5E: 4.88
     - Vector1_63F09C4C: 4.12
     - Vector1_669A8299: 0
-    - Vector1_8A3DCEB1: 0
+    - Vector1_8A3DCEB1: 0.46
     - Vector1_A9AE353D: 0.18
     - Vector1_B0B5529B: 0
-    - Vector1_B5FF08CE: 0.317
-    - Vector1_CE0135BD: 2
-    - Vector1_EBF981FF: 0
-    - Vector1_EC59BEC5: 63.94
-    - Vector1_F8CA93E4: 12.31
+    - Vector1_B5FF08CE: 0.515
+    - Vector1_CE0135BD: 1.09
+    - Vector1_EBF981FF: -9.6
+    - Vector1_EC59BEC5: 124.41
+    - Vector1_F8CA93E4: 8.2
     - Vector1_FC9550D8: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -246,7 +246,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_2F03AF86: {r: 0.03243863, g: 0.26415092, b: 0.01619794, a: 0}
-    - Color_4559B32: {r: 0, g: 0, b: 0, a: 0}
+    - Color_4559B32: {r: 0.8396226, g: 0.18153629, b: 0, a: 0}
     - Color_80551AF3: {r: 0, g: 0, b: 0, a: 0}
     - Color_A094A8AB: {r: 0.69582325, g: 0.69582325, b: 0.69582325, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
