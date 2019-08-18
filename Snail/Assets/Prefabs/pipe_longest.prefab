@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &5232796008673342461
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516198013977507663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4743137211434895835, guid: a7b265ba7b983504cafceaaab4ad4e0a, type: 3}
 --- !u!1 &4097324068732723552
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +25,7 @@ GameObject:
   - component: {fileID: 1047024588051846003}
   - component: {fileID: 8348761045088676165}
   - component: {fileID: 2368973138385622460}
+  - component: {fileID: 9064118706043335295}
   m_Layer: 0
   m_Name: pipe_longest
   m_TagString: Untagged
@@ -79,13 +94,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5232796008673342461
+--- !u!64 &9064118706043335295
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516198013977507663}
+  m_GameObject: {fileID: 4097324068732723552}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
