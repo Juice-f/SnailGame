@@ -2418,6 +2418,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 311146309}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1897528864 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: a21723bd605f50744af00b3f9c36dc0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 311146309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1908247800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2691,11 @@ PrefabInstance:
       propertyPath: snailSprite
       value: 
       objectReference: {fileID: 1897528863}
+    - target: {fileID: 3249442078859550832, guid: 425074952493889499111be8d6c0f8c9,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1897528864}
     - target: {fileID: 3249442078205478798, guid: 425074952493889499111be8d6c0f8c9,
         type: 3}
       propertyPath: m_IsActive

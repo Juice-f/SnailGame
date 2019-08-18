@@ -31,7 +31,7 @@ public class SnailCrawlMovement : MonoBehaviour
     {
         snailSprite.SetActive(true);
         wasRolling = true;
-        
+
     }
     private void OnDisable()
     {
@@ -44,6 +44,7 @@ public class SnailCrawlMovement : MonoBehaviour
     [SerializeField] Collider slimeCollider;
     [SerializeField] float righySpeed = 5f;
     [SerializeField] float movementSpeed;
+    [SerializeField] Animator animator;
     //[SerializeField] float groundCheckRange;
     //[SerializeField] Vector3 groundCheckDirection;
 
@@ -186,13 +187,21 @@ public class SnailCrawlMovement : MonoBehaviour
             if (xAxis < 0)
             {
                 // snailSprite.GetComponent<SpriteRenderer>().flipX = true;
-                snailSprite.transform.localRotation =Quaternion.Euler(0, -90, 0);
+                snailSprite.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                animator.SetBool("Crawling", true);
             }
             else if (xAxis > 0)
             {
-            //    snailSprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-                snailSprite.transform.localRotation = Quaternion.Euler(0, 90, 0);
+                //    snailSprite.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                snailSprite.transform.localRotation = Quaternion.Euler(0, -180, 0);
                 // snailSprite.GetComponent<SpriteRenderer>().flipX = false;
+                animator.SetBool("Crawling", true);
+                Debug.Log("Crawling: " + animator.GetBool("Crawling"));
+            }
+            else
+            {
+                animator.SetBool("Crawling", false);
+                Debug.Log("Crawling: " + animator.GetBool("Crawling"));
             }
 
             //if (xAxis < 0 && GetGroundRay(leftIndex).collider != null)
